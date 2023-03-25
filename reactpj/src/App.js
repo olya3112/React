@@ -1,25 +1,20 @@
 import logo from './logo.svg';
+import React, {useState} from "react";
 import './App.css';
+import PostNews from "./components/PostNews/PostNews";
+import data from "./assets/mock-data.json";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const content = data
+
+    return (
+
+        <div>
+            {content.map(item => <PostNews title = {item.title} text={item.text} currentLikes={item.currentLikes}/>)}
+        </div>
+    );
 }
 
 export default App;
