@@ -1,32 +1,23 @@
 import React, {useState} from 'react';
 import s from './postNewsStyle.module.css';
+import Comments from "../Comments/Comments";
+import data from "../../assets/data/articles.json";
 
 
 
 export function PostNews (props) {
-    let color = 0
-
-    const colors = ['wight', 'red'];
 
     const [count, setCount] = useState(props.currentLikes)
     function increment(){
         setCount( count+1)
         props.currentLikes = count
-        color = 1
-        s.heart.changeColor.background ='tomato'
+
     }
     function discrement(){
         setCount(  count -1 )
         props.currentLikes = count
-        color=0
-        s.heart.changeColor.background ='wight'
     }
-    function madeColor(color){
-        if (color==0){
-            s.heart.changeColor.background ='wight'
-        }
 
-    }
 
     return (
         <li className={s.content}>
@@ -42,6 +33,21 @@ export function PostNews (props) {
                 <button className={s.buttom} onClick={discrement}>Dislike</button>
                 <p className={s.count}> {count}</p>
             </div>
+            <hr/>
+            <div>
+                <div>
+                    <b> Колличество комментариев </b>
+                </div>
+                <strong>
+                    {props.commentsCount}
+                </strong>
+            </div>
+            <div>
+                <button className={s.buttom} >Открыть комментарии </button>
+            </div>
+            <br/>
+
+
         </li>
     );
 };

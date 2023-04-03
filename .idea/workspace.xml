@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="71d79c09-9190-46b6-8d89-cbcc87741ff7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/reactpj/src/components/PostNews/PostNews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reactpj/src/components/PostNews/PostNews.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NVbpclSkky5xlouxcpliU2a7xx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "part1",
+    "last_opened_file_path": "C:/Users/ovp31/Desktop/Учёба и не только/Новая папка/React_MIPT/React/reactpj",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/ovp31/Desktop/Учёба и не только/Новая папка/React_MIPT/React/reactpj/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Jest.Tests in reactpj/">
+    <configuration name="Tests in reactpj/" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/reactpj/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$/reactpj" />
+      <envs />
+      <scope-kind value="DIRECTORY" />
+      <test-directory value="$PROJECT_DIR$/reactpj" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App.js" type="NodeJSConfigurationType" singleton="false" path-to-node="$PROJECT_DIR$/reactpj/src/App.js" nameIsGenerated="true" path-to-js-file="App.js" working-dir="$PROJECT_DIR$/reactpj/src">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeStartBrowserRunConfigurationExtension">
+        <browser name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="NodeJSConfigurationType" path-to-node="$PROJECT_DIR$/reactpj/public/index.html" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.Tests in reactpj/" />
+      <item itemvalue="Node.js.Unnamed" />
+      <item itemvalue="Node.js.App.js" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Tests in reactpj/" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71d79c09-9190-46b6-8d89-cbcc87741ff7" name="Changes" comment="" />
+      <created>1679752381768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679752381768</updated>
+      <workItem from="1679752382884" duration="28000" />
+      <workItem from="1679752420138" duration="12000" />
+      <workItem from="1680348437670" duration="3229000" />
+      <workItem from="1680360663561" duration="59000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
