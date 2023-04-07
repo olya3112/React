@@ -7,7 +7,6 @@ function selectByArticleId(totalData, id) {
 }
 
 export async function getComments(articleId) {
-
     return new Promise(resolve => {
         const targetComments = selectByArticleId(comments, articleId)
         setTimeout(() => resolve(targetComments), COMMENTS_LOAD_DURATION)

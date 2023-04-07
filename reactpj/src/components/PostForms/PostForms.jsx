@@ -20,9 +20,7 @@ export function PostForms ({create})  {
             <input value={content.text}
                    onChange={e => setPost({...content, text: e.target.value})}/>
             <button onClick={addNewPost}> Создать карточку </button>
-
         </form>
-
     );
 };
 

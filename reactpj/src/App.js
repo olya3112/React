@@ -27,18 +27,11 @@ function App() {
         <div>
             <PostForms create={createPost}/>
 
-            <div>
-                { content ?
-                    content.map(item =>
 
-                        <PostNews articleId = {item.articleId} title = {item.title} text={item.text} currentLikes={item.currentLikes} commentsCount={item.commentsCount}/>
-                    )
-                    :
-                    <div>
-                        Content is loading...
-                    </div>
-                }
-            </div>
+        <div>
+            {content.map(item => <PostNews articleId = {item.articleId} title = {item.title} text={item.text} currentLikes={item.currentLikes} commentsCount={item.commentsCount}/>)}
+            {comments.map(item => <Comments  text = {item.text} author={item.author} />)}
+        </div>
             <CommentsForms createcomments={createComment}/>
         </div>
     );

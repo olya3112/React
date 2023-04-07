@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import comments from "../../assets/data/comments.json";
 
 export function CommentsForms ({createcomments})  {
 
@@ -13,10 +12,6 @@ export function CommentsForms ({createcomments})  {
         setComment( {author: '', text: ''})
 
     }
-
-
-
-
 
     return (
         <form>
