@@ -1,32 +1,26 @@
-import React, {useState} from 'react';
-import comments from "../../assets/data/comments.json";
+import React, {useState} from "react";
 
-export function CommentsForms ({createcomments})  {
+export function CommentsForm ({create})  {
 
     const [comments, setComment] = useState({author: '', text: ''})
     const addNewComment = (e) =>{
         e.preventDefault()
         const newcomment = {
-            ...comments, articleId: Date.now()
+            ...comments, articleId: create.articleId
         }
-        createcomments(newcomment)
+        create(newcomment)
         setComment( {author: '', text: ''})
-
     }
 
 
-
-
-
-    return (
+    return(
         <form>
-            <input value={comments.title}
+            <input value={comments.author}
                    onChange={e => setComment({...comments, author: e.target.value})}/>
             <input value={comments.text}
                    onChange={e => setComment({...comments, text: e.target.value})}/>
-            <button onClick={addNewComment}> Добавить комментарий </button>
+            <button onClick={addNewComment}> Создать карточку </button>
         </form>
     );
 };
-
-export default CommentsForms;
+export default CommentsForm;
