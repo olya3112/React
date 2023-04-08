@@ -1,0 +1,87 @@
+@import "../../common/styles/mixins.module.scss";
+@import "../../common/styles/vars.module.scss";
+
+.buttom {
+  @include borders-and-background-color($darkGreen, $smallBorderRadius, #e9ff99);
+
+  color: $darkGreen;
+  margin: 1% 1%;
+  width: 88%;
+  padding: 1%;
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+}
+
+.postline{
+  display: inline-flex;
+  padding: 20px;
+
+}
+
+.commentInput {
+  @include borders-and-background-color($darkGreyColor, $smallBorderRadius, $wightColor);
+
+  margin: 1% 1%;
+  width: 85%;
+  padding: 1%;
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+}
+
+.formAdd {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: initial ;
+
+  .form {
+    @include borders-and-background-color($darkGreyColor, $smallBorderRadius, $wightColor);
+    min-width: 10%;
+    width: auto;
+    margin-top: 1%;
+    padding: 1% 2%;
+    margin-right: 4%;
+    margin-left: 2%;}
+}
+
+.name {
+  @include font-settings($simpleTextSizeMedium, bold);
+  padding: 1%;
+}
+
+.contentText {
+  @include font-settings($simpleTextSizeMedium, normal);
+  padding: 1%;
+}
+
+@media (max-width: $mediumScreenMaxWidth) {
+
+  .name {
+    @include font-settings($simpleTextSizeMedium, bold);
+  }
+
+  .contentText {
+    @include font-settings($simpleTextSizeMedium, normal);
+  }
+
+}
+
+
+@media (min-width: $largeScreenMinWidth) {
+
+  .name {
+    @include font-settings($simpleTextSizeMedium, bold);
+  }
+
+  .contentText {
+    @include font-settings($simpleTextSizeMedium, normal);
+  }
+
+}

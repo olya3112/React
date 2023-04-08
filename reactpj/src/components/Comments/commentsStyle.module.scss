@@ -1,0 +1,97 @@
+@import "../../common/styles/mixins.module.scss";
+@import "../../common/styles/vars.module.scss";
+
+
+
+.comments {
+  @include borders-and-background-color($darkGreyColor, $smallBorderRadius, $wightColor);
+  min-width: 10%;
+  width: auto;
+  margin-top: 1%;
+  padding: 1% 2%;
+  margin-right: 4%;
+  margin-left: 2%;
+}
+
+.buttom {
+  @include borders-and-background-color($darkGreen, $smallBorderRadius, #e9ff99);
+
+  color: $darkGreen;
+  margin: 1% 1%;
+  width: 88%;
+  padding: 1%;
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+}
+
+
+.formAdd {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: initial ;
+
+  .form {
+  @include borders-and-background-color($darkGreyColor, $smallBorderRadius, $wightColor);
+  min-width: 10%;
+  width: auto;
+  margin-top: 1%;
+  padding: 1% 2%;
+  margin-right: 4%;
+  margin-left: 2%;}
+}
+
+
+
+
+
+.commentInput {
+  @include borders-and-background-color($darkGreyColor, $smallBorderRadius, $wightColor);
+
+  margin: 1% 1%;
+  width: 85%;
+  padding: 1%;
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+}
+.author {
+  @include font-settings($simpleTextSizeSmall, bold);
+}
+
+.commentText {
+  @include font-settings($simpleTextSizeSmall, normal);
+}
+
+
+
+@media (max-width: $mediumScreenMaxWidth) {
+
+  .author {
+    @include font-settings($simpleTextSizeMedium, bold);
+  }
+
+  .commentText {
+    @include font-settings($simpleTextSizeMedium, normal);
+  }
+
+  }
+
+
+@media (min-width: $largeScreenMinWidth) {
+
+  .author {
+    @include font-settings($simpleTextSizeMedium, bold);
+  }
+
+  .commentText {
+    @include font-settings($simpleTextSizeMedium, normal);
+  }
+
+}
