@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import s from './postNewsStyle.module.scss';
 
 export function PostForms ({create})  {
 
@@ -15,11 +16,13 @@ export function PostForms ({create})  {
 
     return (
         <form>
-           <input value={content.title}
+           <input className={s.commentInput} value={content.title}
                   onChange={e => setPost({...content, title: e.target.value})}/>
-            <input value={content.text}
+            <input className={s.commentInput} value={content.text}
                    onChange={e => setPost({...content, text: e.target.value})}/>
-            <button onClick={addNewPost}> Создать карточку </button>
+            <button className={s.buttom}
+                onClick={addNewPost}> Создать карточку </button>
+            <hr/>
 
         </form>
 

@@ -1,14 +1,14 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import s from './postNewsStyle.module.css';
+import s from './postNewsStyle.module.scss';
 import Comments from "../Comments/Comments";
-import com from "../../assets/data/comments.json";
-import CommentsForm from "../Comments/CommentsForm";
+
+
 
 
 export function PostNews (props) {
 
     const [count, setCount] = useState(props.currentLikes)
-    const [comments, setComments] = useState(com)
+
 
 
 
@@ -43,31 +43,41 @@ export function PostNews (props) {
 
     return (
 
-        <li className={s.content}>
-            <strong>
-                {props.title}
-            </strong>
+        <div >
             <div>
-                {props.text}
+                <strong className={s.name}>
+                        {props.title}
+                </strong>
+                <div className={s.contentText}>
+                     {props.text}
+                </div>
             </div>
-            <div>
-                <b className={s.heart}>0</b>
+            <div className={s.postline}>
+                <p> {count}</p>
                 <button className={s.buttom} onClick={increment} >Like</button>
-                <button className={s.buttom} onClick={discrement}>Dislike</button>
-                <p className={s.count}> {count}</p>
-            </div>
-            <hr/>
-            <div>
-                <button className={s.buttom}
-                onClick={openComments}>
+                <button  className={s.buttom} onClick={discrement}>Dislike</button>
+                <button  className={s.buttom}
+                        onClick={openComments}>
                     <p>
-                    {commentsInfo.show < 0
-                        ? 'Открыть комментарии'
-                        : 'Закрыть комментарии'
-                    }
+                        {commentsInfo.show < 0
+                            ? 'Открыть комментарии'
+                            : 'Закрыть комментарии'
+                        }
                     </p>
                 </button>
             </div>
+
+            {/*<div>*/}
+            {/*    <button className={s.button}*/}
+            {/*    onClick={openComments}>*/}
+            {/*        <p>*/}
+            {/*        {commentsInfo.show < 0*/}
+            {/*            ? 'Открыть комментарии'*/}
+            {/*            : 'Закрыть комментарии'*/}
+            {/*        }*/}
+            {/*        </p>*/}
+            {/*    </button>*/}
+            {/*</div>*/}
 
 
             {(commentsInfo.show > 0) &&
@@ -80,7 +90,9 @@ export function PostNews (props) {
             }
 
             <br/>
-        </li>
+            <hr/>
+        </div>
+
 
     );
 };

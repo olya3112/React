@@ -1,6 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {getComments} from "../../assets/helpers/get-comments-by-article";
 import CommentsForm from "./CommentsForm";
+import s from './commentsStyle.module.scss';
 
 
 
@@ -18,15 +19,6 @@ export function Comments ({articleId, commentsCount})  {
         })
     }, [])
 
-    // const createComments = useMemo(
-    //     ()=>{
-    //         getComments(articleId).then(fetchedComments => {
-    //             setComments(fetchedComments)
-    //             setCommentsSize(commentsCount)
-    //         })
-    //     },
-    //     [setCommentsSize, commentsCount, comments]
-    // )
 
 
 
@@ -43,7 +35,7 @@ export function Comments ({articleId, commentsCount})  {
 
 
     return (
-        <div>
+        <div className={s.comments}>
 
             <CommentsForm create={createComment}/>
             <h3>Колличество комментариев к записи: {commentsSize} </h3>
@@ -51,12 +43,11 @@ export function Comments ({articleId, commentsCount})  {
             { comments ?
                 comments.map(item =>
 
-                    <li >
-                        <div> {item.id} </div>
-                         <div > {item.author} </div>
-                         <div > {item.text} </div>
-                        <button onClick= {() => deleteComment(item.id)}> удалить комментарий</button>
-                    </li>)
+                    <div>
+                         <div className={s.author}> {item.author} </div>
+                         <div className={s.commentText}> {item.text} </div>
+                        <button className={s.buttom} onClick= {() => deleteComment(item.id)}> удалить комментарий</button>
+                    </div>)
                 :
                 <div>
                     Comments is loading...

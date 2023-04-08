@@ -4,7 +4,7 @@ import data from "./assets/data/articles.json";
 import React, {useEffect, useState} from 'react';
 import com from "./assets/data/comments.json"
 
-import PostForms from "./components/PostForms/PostForms";
+import PostForms from "./components/PostNews/PostForms";
 import {getArticles} from "./assets/helpers/get-articles";
 
 

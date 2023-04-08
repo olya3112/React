@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import s from "./commentsStyle.module.scss";
 
 export function CommentsForm ({create})  {
 
@@ -14,12 +15,15 @@ export function CommentsForm ({create})  {
 
 
     return(
-        <form>
-            <input value={comments.author}
+        <form className={s.form}>
+            <input className={s.commentInput}
+                   value={comments.author}
                    onChange={e => setComment({...comments, author: e.target.value})}/>
-            <input value={comments.text}
+            <input className={s.commentInput}
+                   value={comments.text}
                    onChange={e => setComment({...comments, text: e.target.value})}/>
-            <button onClick={addNewComment}> Создать карточку </button>
+            <button className={s.buttom}
+                   onClick={addNewComment}> Создать комментарий </button>
         </form>
     );
 };
