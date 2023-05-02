@@ -67,17 +67,6 @@ export function PostNews (props) {
                 </button>
             </div>
 
-            {/*<div>*/}
-            {/*    <button className={s.button}*/}
-            {/*    onClick={openComments}>*/}
-            {/*        <p>*/}
-            {/*        {commentsInfo.show < 0*/}
-            {/*            ? 'Открыть комментарии'*/}
-            {/*            : 'Закрыть комментарии'*/}
-            {/*        }*/}
-            {/*        </p>*/}
-            {/*    </button>*/}
-            {/*</div>*/}
 
 
             {(commentsInfo.show > 0) &&

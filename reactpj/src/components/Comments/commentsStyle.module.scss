@@ -12,6 +12,11 @@
   margin-right: 4%;
   margin-left: 2%;
 }
+.commentline{
+  display: inline-flex;
+  padding: 20px;
+
+}
 
 .buttom {
   @include borders-and-background-color($darkGreen, $smallBorderRadius, #e9ff99);

@@ -29,9 +29,10 @@ export function Comments ({articleId, commentsCount})  {
 
 
     const createComment = (newcomment) =>{
-        setComments([... comments, newcomment])
+        setComments([...comments, newcomment, ])
         setCommentsSize(commentsSize + 1)
     }
+
 
 
     return (
@@ -46,6 +47,7 @@ export function Comments ({articleId, commentsCount})  {
                     <div>
                          <div className={s.author}> {item.author} </div>
                          <div className={s.commentText}> {item.text} </div>
+                         <div className={s.commentText}> {item.date}</div>
                         <button className={s.buttom} onClick= {() => deleteComment(item.id)}> удалить комментарий</button>
                     </div>)
                 :
