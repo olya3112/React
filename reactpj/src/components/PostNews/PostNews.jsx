@@ -51,6 +51,9 @@ export function PostNews (props) {
                 <div className={s.contentText}>
                      {props.text}
                 </div>
+                <div className={s.contentText}>
+                    {props.date}
+                </div>
             </div>
             <div className={s.postline}>
                 <p> {count}</p>

@@ -36,7 +36,12 @@ function App() {
             <div>
                 { content ?
                     content.map(item =>
-                        <PostNews articleId = {item.articleId} title = {item.title} text={item.text} currentLikes={item.currentLikes} commentsCount={item.commentsCount}/>
+                        <PostNews articleId = {item.articleId}
+                                  title = {item.title}
+                                  text={item.text}
+                                  currentLikes={item.currentLikes}
+                                  commentsCount={item.commentsCount}
+                                  date = {item.date}/>
                     )
                     :
                     <div>

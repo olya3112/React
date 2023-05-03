@@ -6,16 +6,17 @@ import s from './commentsStyle.module.scss';
 
 
 
-export function Comments ({articleId, commentsCount})  {
+export function Comments (props)  {
+
 
     const [comments, setComments] = useState(null)
-    const [commentsSize, setCommentsSize] = useState(commentsCount)
+    const [commentsSize, setCommentsSize] = useState(props.commentsCount)
 
 
     useEffect(() => {
-        getComments(articleId).then(fetchedComments => {
+        getComments(props.articleId).then(fetchedComments => {
             setComments(fetchedComments)
-            setCommentsSize(commentsCount)
+            setCommentsSize(props.commentsCount)
         })
     }, [])
 
