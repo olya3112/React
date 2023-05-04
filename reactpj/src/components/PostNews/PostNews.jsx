@@ -54,6 +54,9 @@ export function PostNews (props) {
                 <div className={s.contentText}>
                     {props.date}
                 </div>
+                <p> {props.currentLikes}</p>
+                {/*так нормально сортируется, но при этом если менять число лайков то это переменная count, и с ней не работает*/}
+
             </div>
             <div className={s.postline}>
                 <p> {count}</p>

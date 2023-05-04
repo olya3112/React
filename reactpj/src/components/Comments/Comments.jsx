@@ -2,6 +2,7 @@ import React, {useEffect, useMemo, useState} from 'react';
 import {getComments} from "../../assets/helpers/get-comments-by-article";
 import CommentsForm from "./CommentsForm";
 import s from './commentsStyle.module.scss';
+import MySelect from "../Select/MySelect";
 
 
 
@@ -11,6 +12,9 @@ export function Comments (props)  {
 
     const [comments, setComments] = useState(null)
     const [commentsSize, setCommentsSize] = useState(props.commentsCount)
+
+    const [selectedSorted, setSelectedSorted] = useState('')
+
 
 
     useEffect(() => {
@@ -34,6 +38,14 @@ export function Comments (props)  {
         setCommentsSize(commentsSize + 1)
     }
 
+    const sortComments = (sort) => {
+        setSelectedSorted(sort)
+        setComments([...comments].sort((a , b) => {
+            if (b[sort] > a[sort]) return 1;
+            else if (b[sort] < a[sort]) return -1;
+            else return 0;
+        }) )
+    }
 
 
     return (
@@ -41,6 +53,19 @@ export function Comments (props)  {
 
             <CommentsForm create={createComment}/>
             <h3>Колличество комментариев к записи: {commentsSize} </h3>
+            <div>
+                <MySelect
+                    value={selectedSorted}
+                    onChange={sortComments}
+                    options={[
+                        {value: 'date', name: 'По дате' },
+                        {value: 'countLikes', name: 'По лайкам' }
+                    ]}
+                />
+
+
+                <hr/>
+            </div>
 
             { comments ?
                 comments.map(item =>

@@ -6,6 +6,7 @@ import com from "./assets/data/comments.json"
 
 import PostForms from "./components/PostNews/PostForms";
 import {getArticles} from "./assets/helpers/get-articles";
+import MySelect from "./components/Select/MySelect";
 
 
 
@@ -14,6 +15,9 @@ function App() {
 
     const [content, setPosts] = useState(data)
     const [comments, setComments] = useState(com)
+
+    const [selectedSorted, setSelectedSorted] = useState('')
+
 
     const createComment = (newcomment) =>{
         setComments([comments, newcomment])
@@ -28,11 +32,38 @@ function App() {
         setPosts ( [...content, newpost])
     }
 
+    const sortPosts = (sort) => {
+        setSelectedSorted(sort)
+        setPosts([...content].sort((a , b) => {
+            if (b[sort] > a[sort]) return 1;
+            else if (b[sort] < a[sort]) return -1;
+            else return 0;
+        }) )
+    }
+
+
+    // const sortByCountPosts = (sort) => {
+    //     setSelectedSorted(sort)
+    //     setPosts([...content].sort((a , b) => a[sort].localeCompare(b[sort])))
+    // }
+
 
     return (
         <div>
             <PostForms create={createPost}/>
+            <div>
+               <MySelect
+                   value={selectedSorted}
+                   onChange={sortPosts}
+                   options={[
+                       {value: 'date', name: 'По дате' },
+                       {value: 'currentLikes', name: 'По лайкам' }
+                   ]}
+               />
 
+
+                <hr/>
+            </div>
             <div>
                 { content ?
                     content.map(item =>
@@ -40,8 +71,10 @@ function App() {
                                   title = {item.title}
                                   text={item.text}
                                   currentLikes={item.currentLikes}
+                                  count = {item.count}
                                   commentsCount={item.commentsCount}
                                   date = {item.date}/>
+
                     )
                     :
                     <div>
