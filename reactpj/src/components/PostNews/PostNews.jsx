@@ -11,8 +11,6 @@ export function PostNews (props) {
 
 
 
-
-
     const [commentsInfo, setCommentsInfo] = useState({
         show: -1,
         count: props.commentsCount
@@ -38,16 +36,20 @@ export function PostNews (props) {
         props.currentLikes = count
     }
 
+    function changeTitle() {
 
-
+    }
 
     return (
 
         <div >
             <div>
-                <strong className={s.name}>
+                <div >
+                    <strong className={s.name}>
                         {props.title}
-                </strong>
+                    </strong>
+                    {/*<button className={s.buttom} onClick={changeTitle} > Изменить </button>*/}
+                </div>
                 <div className={s.contentText}>
                      {props.text}
                 </div>
@@ -79,9 +81,16 @@ export function PostNews (props) {
                 <Comments
                     articleId={props.articleId}
                     commentsCount={props.commentsCount}
+                    // count={props.countLikes}
                     changeSize={props.commentsCount}
                 />
 
+                // &&
+                // // <div>
+                // //     <p> {count}</p>
+                // //     <button className={s.buttom} onClick={increment} >Like</button>
+                // //     <button  className={s.buttom} onClick={discrement}>Dislike</button>
+                // // </div>
             }
 
             <br/>

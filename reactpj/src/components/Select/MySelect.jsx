@@ -1,8 +1,9 @@
 import React from 'react';
+import s from '../PostNews/postNewsStyle.module.scss';
 
 const MySelect = ({options, value, onChange}) => {
     return (
-        <select
+        <select className={s.buttom}
             value={value}
             onChange={event => onChange(event.target.value)}
         >

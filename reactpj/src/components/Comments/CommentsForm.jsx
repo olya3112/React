@@ -9,7 +9,7 @@ export function CommentsForm ({create})  {
         const dates = new Date()
         const newDate = dates.toISOString().split('T')[0] + ' ' + dates.toISOString().split('T')[1].split('.')[0]
         const newcomment = {
-            ...comments, articleId: create.articleId, date: newDate
+            ...comments, articleId: create.articleId, date: newDate, countLikes: 0
         }
         create(newcomment)
         setComment( {author: '', text: ''})

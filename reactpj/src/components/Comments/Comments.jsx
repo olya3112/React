@@ -9,6 +9,7 @@ import MySelect from "../Select/MySelect";
 
 export function Comments (props)  {
 
+    const [counts, setCounts] = useState(props.countLikes)
 
     const [comments, setComments] = useState(null)
     const [commentsSize, setCommentsSize] = useState(props.commentsCount)
@@ -47,6 +48,16 @@ export function Comments (props)  {
         }) )
     }
 
+    function increment(){
+        setCounts( counts+1)
+        props.countLikes = counts
+
+    }
+    function discrement(){
+        setCounts(  counts -1 )
+        props.countLikes = counts
+    }
+
 
     return (
         <div className={s.comments}>
@@ -74,6 +85,13 @@ export function Comments (props)  {
                          <div className={s.author}> {item.author} </div>
                          <div className={s.commentText}> {item.text} </div>
                          <div className={s.commentText}> {item.date}</div>
+                         <div className={s.commentText}> {item.countLikes}</div>
+                         <div className={s.commentline}>
+                            <p> {counts}</p>
+                             {/*Save me, что я не прокидываю, почему nun? */}
+                            <button className={s.buttom} onClick={increment} >Like</button>
+                            <button  className={s.buttom} onClick={discrement}>Dislike</button>
+                         </div>
                         <button className={s.buttom} onClick= {() => deleteComment(item.id)}> удалить комментарий</button>
                     </div>)
                 :
