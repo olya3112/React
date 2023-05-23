@@ -6,11 +6,14 @@ describe('getArticles', () =>{
     })
 
     test( 'Shold be object with articleId = 5', () =>{
-        expect(getArticles(5)).toBeInstanceOf(Object);
+        expect(getArticles()).toBeInstanceOf(Object);
     })
 
-    test( 'give articles with articleId = 11', () =>{
-        expect(getArticles(5)[0].articleId).toBe(5);
+    test( 'give articles with articleId = 11',async () => {
+        const received = await getArticles();
+        expect(received[0].articleId).toBe(11);
     })
+
+
 
 })
