@@ -7,10 +7,13 @@ import com from "./assets/data/comments.json"
 import PostForms from "./components/PostNews/PostForms";
 import {getArticles} from "./assets/helpers/get-articles";
 import MySelect from "./components/Select/MySelect";
+import {createStore} from 'redux'
+import {Provider} from "react-redux";
+// import {rootReducer} from
 
-
-
+const store = createStore();
 function App() {
+
 
 
     const [content, setPosts] = useState(data)
@@ -49,6 +52,9 @@ function App() {
 
 
     return (
+        <Provider store={store}>
+
+
         <div>
             <PostForms create={createPost}/>
             <div>
@@ -84,6 +90,8 @@ function App() {
             </div>
 
         </div>
+
+      </Provider>
     );
 }
 
